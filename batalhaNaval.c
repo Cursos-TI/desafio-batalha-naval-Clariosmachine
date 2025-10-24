@@ -14,19 +14,22 @@ int main() {
     int navio_01[3] = {3,3,3};  // navio horizontal
     int navio_02[3] = {3,3,3};  // navio vertical
     // ↓ coordernadas iniciais dos navios
-    int coluna_inicial_navio_01 = 4;
-    int linha_inicial_navio_01 = 4;
+    int coluna_inicial_navio_01 = 1;
+    int linha_inicial_navio_01 = 5;
     int coluna_inicial_navio_02 = 2;
     int linha_inicial_navio_02 = 8;
 
-    // TODO (implementar verificacao dos limites. colocar linhas abaixo em um "if")
-
-    if (coluna_inicial_navio_01 > 8 || linha_inicial_navio_02 > 8)
+    if (coluna_inicial_navio_01 > 8 || linha_inicial_navio_02 > 8 || linha_inicial_navio_01 > 10 || coluna_inicial_navio_02 > 10)
     {
         coluna_inicial_navio_01 > 8? 
         printf("\nA coluna inicial do navio 01 nao pode ser maior que 08 ou vai ultrapassar a borda do tabuleiro.\n\n")
-        :
-        printf("\nA linha inicial do navio 02 nao pode ser maior que 08 ou vai ultrapassar a borda do tabuleiro.\n\n");
+        : linha_inicial_navio_02 > 8?
+        printf("\nA linha inicial do navio 02 nao pode ser maior que 08 ou vai ultrapassar a borda do tabuleiro.\n\n")
+        : linha_inicial_navio_01 > 10?
+        printf("\nA linha inicial do navio 01 nao pode ser maior que 10 ou vai ultrapassar a borda do tabuleiro.\n\n")
+        : 
+        printf("\nA coluna inicial do navio 01 nao pode ser maior que 08 ou vai ultrapassar a borda do tabuleiro.\n\n");
+
         return 0;  //Finaliza o programa
     } 
 
